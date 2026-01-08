@@ -7,7 +7,7 @@ from sklearn.metrics import classification_report, confusion_matrix
 import numpy as np
 
 DATA_DIR = Path("dataset/classification")
-WEIGHTS = Path("models/mango_classifier.pth")
+WEIGHTS = Path("models/mango_classifier_70_15_15_resnet18.pth")
 BATCH_SIZE = 16
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")

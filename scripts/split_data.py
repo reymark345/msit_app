@@ -3,9 +3,9 @@ import shutil
 import random
 from pathlib import Path
 
-SOURCE_DIR = Path("dataset/images_from_MangoDHDS")
+SOURCE_DIR = Path("dataset/public_dataset")
 TARGET_DIR = Path("dataset/classification")
-SPLIT = {"train": 0.7, "val": 0.2, "test": 0.1}
+SPLIT = {"train": 0.70, "val": 0.15, "test": 0.15}
 SEED = 42
 
 IMG_EXTS = {".jpg", ".jpeg", ".png", ".bmp", ".webp"}
