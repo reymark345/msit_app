@@ -65,14 +65,31 @@ print("Using device:", device)
 # =====================
 # TRANSFORMS
 # =====================
+# train_tfms = transforms.Compose([
+#     transforms.Resize((224, 224)),
+#     transforms.RandomHorizontalFlip(p=0.5),
+#     transforms.RandomRotation(10),
+#     transforms.ColorJitter(0.1, 0.1, 0.1),
+#     transforms.ToTensor(),
+#     transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),
+# ])
+
 train_tfms = transforms.Compose([
-    transforms.Resize((224, 224)),
+    transforms.RandomResizedCrop(224, scale=(0.7, 1.0), ratio=(0.85, 1.15)),
     transforms.RandomHorizontalFlip(p=0.5),
-    transforms.RandomRotation(10),
-    transforms.ColorJitter(0.1, 0.1, 0.1),
+    transforms.RandomApply([transforms.RandomRotation(12)], p=0.5),
+    transforms.RandomApply([transforms.ColorJitter(0.25, 0.25, 0.15, 0.05)], p=0.8),
+    transforms.RandomApply([transforms.RandomPerspective(distortion_scale=0.25, p=1.0)], p=0.25),
     transforms.ToTensor(),
-    transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),
+    transforms.Normalize([0.485,0.456,0.406], [0.229,0.224,0.225]),
+    transforms.RandomErasing(p=0.25, scale=(0.02, 0.12), ratio=(0.3, 3.3)),
 ])
+# The train_tfms include image augmentation techniques such as:
+# RandomResizedCrop
+# RandomHorizontalFlip
+# RandomRotation
+# ColorJitter
+
 
 val_tfms = transforms.Compose([
     transforms.Resize((224, 224)),
