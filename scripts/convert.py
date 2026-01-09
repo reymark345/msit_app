@@ -6,8 +6,8 @@ import pillow_heif
 pillow_heif.register_heif_opener()
 
 # Paths
-INPUT_ROOT = Path("dataset/collected_dataset/raw_images")
-OUTPUT_ROOT = Path("dataset/collected_dataset/output_jpg")
+INPUT_ROOT = Path("source/collected_dataset/raw_images")
+OUTPUT_ROOT = Path("source/collected_dataset/output_jpg")
 
 # JPG quality (good for disease texture)
 JPG_QUALITY = 95

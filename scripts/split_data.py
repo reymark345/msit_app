@@ -3,7 +3,7 @@ import shutil
 import random
 from pathlib import Path
 
-SOURCE_DIR = Path("dataset/public_dataset")
+SOURCE_DIR = Path("source/public_dataset")
 TARGET_DIR = Path("dataset/classification")
 SPLIT = {"train": 0.70, "val": 0.15, "test": 0.15}
 SEED = 42
