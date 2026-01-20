@@ -1,0 +1,27 @@
+# Requirements for Mango Disease Severity Estimation Module
+# Based on the study: "Mango fruit diseases severity estimation based on image segmentation and deep learning"
+
+# Core Deep Learning
+torch>=2.0.0
+torchvision>=0.15.0
+
+# Image Processing
+pillow>=9.0.0
+opencv-python>=4.7.0
+
+# Data Science & Visualization
+numpy>=1.23.0
+matplotlib>=3.5.0
+seaborn>=0.11.0
+scikit-learn>=1.2.0
+pandas>=1.5.0
+
+# Web API
+flask>=2.0.0
+flask-cors>=3.0.10
+
+# Object Detection (YOLO)
+ultralytics>=8.0.0
+
+# Utilities
+tqdm>=4.65.0
